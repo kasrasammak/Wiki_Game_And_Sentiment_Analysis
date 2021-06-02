@@ -1,0 +1,45 @@
+Machine Learning method
+
+I decided to test two Machine Learning classifiers against each other. 
+I didn't get very good results, 
+but I suspect it is because I was working with heavily partitioned data
+to make my computation load easier.
+
+I used the Naive Bayes method as well as the Random Forest classifier,
+ which both work on vectorized data. 
+I split the words from the SentimentText feature up into individual features, 
+got rid of stop-words (with some of my own included), 
+got rid of symbols and other meaningless characters, 
+and limited the number of features to 1500 
+to limit the computation load (though the load was still very heavy). 
+
+I then checked the accuracy and kappa scores to see how well my models did. 
+I always check for kappa in classification models 
+to gain insight into how much of the accuracy score 
+could be attributed to the models performance, as opposed to chance. 
+
+In the end, my models did not do so well, 
+however, I only tested it on a small subsection of the data.
+
+I suppose that this approach works by learning the probabilities 
+that any individual word is associated with a given class 
+(positive or negative). Its the most simple approach I could go with, 
+though I believe its not the most efficient, 
+as it transforms the dataset into a lot of features 
+and adds a lot of noise to the set.
+
+To solve this problem, I would somehow have to look into compressing 
+and further engineering the features, performing some sort of 
+dimensionality reduction, or analyzing groups of words / words that 
+associate with positive/negative words by proximity. 
+These are at the moment vague ideas, however, and 
+I would need another day or two to learn about how to 
+concretize the ideas and make them actionable. 
+
+Furthermore, to improve the accuracy scores, 
+I could perform a grid-search-cv to fine tune the hyper parameters 
+that lead to the best performance. I would also test it against other 
+models and retrieve the models and hyper parameters 
+that optimize the performance. In addition 
+I could look into other metrics as well, 
+such as precision, recall, or balanced accuracy.
