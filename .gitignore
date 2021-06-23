@@ -47,3 +47,5 @@ external-deps/python-lsp-server/.installation-dir/
 
 __pycache__
 __pycache__/
+
+Sentiment Analysis Dataset-1.csv
