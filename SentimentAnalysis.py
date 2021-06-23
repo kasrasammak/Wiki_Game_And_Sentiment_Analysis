@@ -12,7 +12,7 @@ import pandas as pd
 
 
 #%%
-df = pd.read_csv('Sentiment_Analysis_Dataset.csv', encoding="ISO-8859-1")
+df = pd.read_csv('Sentiment Analysis Dataset-1.csv', error_bad_lines=False,)
 df = df.iloc[0::100, :]
 df = df[["Sentiment", "SentimentSource","SentimentText"]].reset_index().iloc[:,1:]
 # df = df[["Sentiment", "SentimentSource","SentimentText"]]
